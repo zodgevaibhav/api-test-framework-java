@@ -4,6 +4,7 @@ import org.testng.Assert;
 
 import com.openvz.api_test.request_manupulations.IRequestManupulation;
 import com.openvz.api_test.request_manupulations.XMLRequestManupulation;
+import com.openvz.api_test.template_holder.TemplateUpdator;
 
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
@@ -29,7 +30,7 @@ public class StepDefinitions {
 	@When("I get {string} template of request {string}")
 	public void i_get_template_of_request(String messageFormat, String messageTemplateName) {
 		this.setMessageFormat(messageFormat);
-		requstMessage = StudentTemplates.basicTemplate;
+		requstMessage = new StudentTemplates().basicTemplate;
 	}
 
 	private void setMessageFormat(String messageFormat) {
